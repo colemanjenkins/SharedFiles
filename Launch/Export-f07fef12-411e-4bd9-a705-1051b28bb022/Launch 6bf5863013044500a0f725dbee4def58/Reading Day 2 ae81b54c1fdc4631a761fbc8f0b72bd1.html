@@ -1,0 +1,673 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Reading Day 2</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ae81b54c-1fdc-4631-a761-fbc8f0b72bd1" class="page sans"><header><h1 class="page-title">Reading Day 2</h1></header><div class="page-body"><h3 id="0a09d124-1016-4938-b152-7f0ba23e1ba9" class="">Agile Development</h3><ul id="c8ca2e75-6b39-4012-9147-8f132e5f912c" class="block-color-blue toggle"><li><details open=""><summary>link</summary><figure id="81fc4927-bc45-4f07-b63b-d3d381a7aa90"><a href="https://www.cprime.com/resources/what-is-agile-what-is-scrum/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">What is AGILE? - What is SCRUM? - Agile FAQ&#x27;s | Cprime</div><div class="bookmark-description">Agile software development refers to software development methodologies centered round the idea of iterative development, where requirements and solutions evolve through collaboration between self-organizing cross-functional teams. The ultimate value in Agile development is that it enables teams to deliver value faster, with greater quality and predictablity, and greater aptitude to respond to change.</div></div><div class="bookmark-href"><img src="https://www.cprime.com/favicon-16x16.png" class="icon bookmark-icon"/>https://www.cprime.com/resources/what-is-agile-what-is-scrum/</div></div><img src="https://www.cprime.com/wp-content/uploads/2018/05/cPrimeCarrie7-7-14_300DPIsmall1.jpg" class="bookmark-image"/></a></figure></details></li></ul><ul id="85dcff0f-d0fb-43d5-96b7-901cbfa2324b" class="toggle"><li><details open=""><summary>Agile</summary><ul id="f01be98e-b7b7-4b2f-a6b6-1b09dbe81e33" class="toggle"><li><details open=""><summary>What is agile software development</summary><p id="0903b50b-940c-4040-8c29-e4c858edd1ef" class="">centered around the idea of iterative development</p><p id="58c7ff60-f564-497a-861b-0ef949b049b8" class="">ie requirements and solutions evolve</p></details></li></ul><ul id="fbf2947c-4fde-42c5-9fa2-781bb2fb85bd" class="toggle"><li><details open=""><summary>value</summary><p id="d6b77fb2-0a07-44a9-8498-dc342db0b7e9" class="">lets teams deliver faster</p><p id="87246190-bd69-492e-b7dc-f09e5d57d10d" class="">higher quality and predictability</p><p id="17de126d-4e8d-4a81-9164-954d87cc6b20" class="">easier to respond to change</p></details></li></ul><ul id="a12161d8-535e-450a-a0a5-fed26b9e8da7" class="toggle"><li><details open=""><summary>Agile Manifesto</summary><p id="88e6c21c-0240-46ba-b278-55274d12c5e5" class="">developed by 14 leading figures in software to show what works and what doesn&#x27;t</p><figure id="e6f848fc-1ef1-4275-870b-04e79309192f"><a href="http://agilemanifesto.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Manifesto for Agile Software Development</div><div class="bookmark-description">We are uncovering better ways of developing software by doing it and helping others do it. These are our values and principles.</div></div><div class="bookmark-href">http://agilemanifesto.org/</div></div></a></figure></details></li></ul></details></li></ul><ul id="688c3828-acbe-4ad5-9bd7-0beed40addb5" class="toggle"><li><details open=""><summary>Scrum</summary><p id="50ddc06d-1061-400f-a143-b9caf35dff10" class="">
+</p><figure id="72e7a548-b693-4547-adc7-db44e61b6910" class="image"><a href="Reading%20Day%202%20ae81b54c1fdc4631a761fbc8f0b72bd1/Untitled.png"><img style="width:480px" src="Reading%20Day%202%20ae81b54c1fdc4631a761fbc8f0b72bd1/Untitled.png"/></a></figure><p id="3e32f894-f770-45be-852d-1e97c7b7a335" class="">an agile methodology, along with Kanban</p><ul id="980fee3c-1567-4d30-a700-5fbd61c218dd" class="toggle"><li><details open=""><summary>Key parts</summary><ul id="6f11a667-ff59-4449-be33-688f1e8ab94d" class="toggle"><li><details open=""><summary>Backlog (&quot;Product Backlog Items&quot;)</summary><p id="f4df4824-1f6a-4cc2-a130-d748b2f0498d" class="">basically feature requests like this</p><figure id="b50c440c-d7b5-471a-ae2a-5ba897da43d7" class="image"><a href="Reading%20Day%202%20ae81b54c1fdc4631a761fbc8f0b72bd1/Untitled%201.png"><img style="width:288px" src="Reading%20Day%202%20ae81b54c1fdc4631a761fbc8f0b72bd1/Untitled%201.png"/></a></figure><p id="21e9052a-6545-4aae-9e11-1075529a0b1b" class="">name in &quot;Role-Action-Reason&quot;</p></details></li></ul><ul id="c10f5614-a387-44cb-b73d-b9e59dc4b58d" class="toggle"><li><details open=""><summary>Bug reports</summary><p id="37cd3b61-8812-4fad-bdc2-a3527ef91877" class="">can be separate or combined with feature requests</p></details></li></ul></details></li></ul><ul id="94c9024b-a417-48b1-a6ce-993af21e5aee" class="toggle"><li><details open=""><summary>lightweight process framework</summary><p id="a1b776e3-8749-478e-899f-eadaddab3cbe" class="">leightweight - overhead small to maximize productivity</p><p id="103090ed-702c-4307-b633-210afe886013" class="">
+</p></details></li></ul><ul id="92ed5c0e-f8c0-4342-80bc-4f6e4e814cbc" class="toggle"><li><details open=""><summary>Categories</summary><ul id="bdefef5c-a99c-4007-a874-1bf39c22182f" class="toggle"><li><details open=""><summary>Roles</summary><ul id="267495e7-db2e-4837-8cb6-e20f3b062c00" class="toggle"><li><details open=""><summary>picture</summary><figure id="f98decfd-1acb-4647-a502-8974f77fda0c" class="image"><a href="Reading%20Day%202%20ae81b54c1fdc4631a761fbc8f0b72bd1/Untitled%202.png"><img style="width:336px" src="Reading%20Day%202%20ae81b54c1fdc4631a761fbc8f0b72bd1/Untitled%202.png"/></a></figure></details></li></ul><ul id="9eb2b794-4a73-43f3-82db-f985cebffa8b" class="toggle"><li><details open=""><summary>Scrummaster</summary><p id="5bb19bdb-deae-46a9-9ff4-fd7f675938a5" class="">planning/task-level tracking in daily meetings</p><p id="c2f8f020-d481-446d-80d0-6121dae6276e" class="">benefits person by giving him or her lots of awareness of the project</p><p id="aa82ea8a-65b1-45fa-a70a-c678d1f7cb27" class="">catch and address issues quicky</p><p id="fda0d9a3-9784-4693-9c62-6ccaf5a0ae8e" class="">makes the process run smoothly, organization, and facilitation</p><p id="392e1b31-1c78-49b1-a498-56b71a82902d" class="block-color-yellow">empowers team to make decisions on their own for a lot of things</p></details></li></ul><ul id="19fe3109-ed4a-4888-8424-146f4a2c7fac" class="toggle"><li><details open=""><summary>Product Owner</summary><p id="c814e3c2-4258-49fe-a3e5-45dc85d5a6ec" class="">Keeper of the requirements</p><p id="68eaf598-614c-43fc-afd6-f3df3e8be9bd" class="">&quot;single source of truth&quot;</p></details></li></ul><ul id="84d4f75b-2990-4a57-b7cf-ddf48ea4b6a1" class="toggle"><li><details open=""><summary>Team</summary><p id="fa471d19-850d-410c-aa89-6f2b0c81f74d" class="">does the hands on work of development</p><p id="944928ec-7008-4c22-b24a-5705a913c436" class="">Self-organizing</p><p id="d28824cb-11eb-4e58-97c8-2c8862fdf38b" class="">should be about 5-9 people</p></details></li></ul><p id="e6e5098a-ebab-44fd-b536-2f92927b9378" class="">Scrumteam refers to all of them together</p></details></li></ul><ul id="3c24bb98-b252-4da4-8883-2f498e6aff79" class="toggle"><li><details open=""><summary>Artifacts</summary></details></li></ul><ul id="273f5138-eccc-4bf3-b055-7f6f3c4c0f37" class="toggle"><li><details open=""><summary>Time Boxes</summary></details></li></ul></details></li></ul><ul id="8e4c2883-7396-4526-b147-267ea4ac32c4" class="toggle"><li><details open=""><summary>Benefits</summary><p id="8731c636-3d43-4a06-918f-8b02fa83e8a3" class="">Quality of deliverable</p><p id="4b0341ea-50c1-4593-85f8-453335999786" class="">coping with change</p><p id="eea369b5-1c01-4fd6-9104-1d2ea6814109" class="">time estimates</p><p id="5bf608d5-45c3-466f-b7ea-a317346f5295" class="">control of project schedule</p></details></li></ul></details></li></ul><ul id="c1945b9b-650c-498f-9ed5-70548dfb4742" class="toggle"><li><details open=""><summary>Key takeaways</summary><p id="fe7cc12e-45af-4ed4-9f87-086529e5cdb6" class="">Requirements are specified but to the level that the details can be worked out in implementation</p><p id="47a63384-0aa0-421b-af9a-f323e98c8220" class="">Agile stresses outcome that delivers value, not just amount of output</p><p id="ef5e23cd-f274-44a9-be15-a6a169dab52f" class="">the key is not velocity but stability</p></details></li></ul><h3 id="bc00dcd9-b862-4194-bb7e-e5ad35bab07e" class="">React Best Practices</h3><ul id="8e0b804c-35a5-492b-bac5-1aadc6d40e8d" class="block-color-blue toggle"><li><details open=""><summary>link</summary><figure id="113b02ad-8662-4e49-ade8-f809a2e44244"><a href="https://engineering.musefind.com/our-best-practices-for-writing-react-components-dec3eb5c3fc8" class="block-color-orange bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Our Best Practices for Writing React Components</div><div class="bookmark-description">When I first started writing React, I remember seeing many different approaches to writing components, varying greatly from tutorial to tutorial. Though the framework has matured considerably since then, there doesn&#x27;t seem to yet be a firm &#x27;right&#x27; way of doing things. Over the past year at MuseFind, our team has written a lot of React components.</div></div><div class="bookmark-href"><img src="https://miro.medium.com/fit/c/256/256/1*02RUY1nLmecM6CnWMkOAzQ.png" class="icon bookmark-icon"/>https://engineering.musefind.com/our-best-practices-for-writing-react-components-dec3eb5c3fc8</div></div><img src="https://miro.medium.com/max/1024/1*GEniDHmmO0nkVuKQ8fhLYw.png" class="bookmark-image"/></a></figure></details></li></ul><blockquote id="3ec0b8a2-49bd-4349-911b-8a5376e482ef" class="">Just read the class component section. I don’t like their way of handling functional components, but you can still read in the event you encounter a functional component written this way in the workplace.</blockquote><ul id="dbfabed0-7f9b-4cbb-bc57-c6ab09c19731" class="toggle"><li><details open=""><summary>Best Practices</summary><ul id="c4a5057c-bcec-415f-ab56-be2d8b952c9d" class="toggle"><li><details open=""><summary>Imports</summary><p id="b9a08531-7b7f-490e-8d54-96038e31d1fc" class="">Separate dependency imports (ie external stuff) from local (stuff you write) by a newline </p></details></li></ul><ul id="03ae52dd-06e4-4396-897d-82c327f06152" class="toggle"><li><details open=""><summary>propTypes and defaultProps</summary><p id="a107989e-8860-4b72-a124-3201523fe095" class="">put them near the top</p></details></li></ul><figure class="block-color-yellow callout" style="white-space:pre-wrap;display:flex" id="fadeddcc-b293-4688-afaa-bd225d4b139c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">what are propTypes?</div></figure><ul id="2c7ba228-24c7-428b-9ef3-650269e36593" class="toggle"><li><details open=""><summary>Methods</summary><p id="e699ba87-7963-4a08-a821-2797ab79cae0" class="">should look like this and be next in the class</p><pre id="316df63a-8a9d-4f14-a60b-8082d2590b97" class="code"><code>handleSubmit = (e) =&gt; {
+    e.preventDefault()
+    this.props.model.save()
+  }
+  
+  handleNameChange = (e) =&gt; {
+    this.props.model.changeName(e.target.value)
+  }
+  
+  handleExpand = (e) =&gt; {
+    e.preventDefault()
+    this.setState({ expanded: !this.state.expanded })
+  }</code></pre></details></li></ul><ul id="7000f3b0-e053-435a-b890-1dbc097bd9a3" class="toggle"><li><details open=""><summary>setState</summary><p id="918d6ac1-0fc7-4126-a3e5-39dbde33173a" class="">this method is actually asynchronous SO</p><p id="30a74b36-7b57-4708-a8e0-552235d37ce2" class="">you shouldn&#x27;t rely on current state</p><p id="2df43355-eb8a-4744-b2e3-6f36f82d94db" class="">use prevState</p><pre id="7a19ae7b-8de5-441b-92cb-b80b3b5535dd" class="code"><code>this.setState(prevState =&gt; ({ expanded: !prevState.expanded }))</code></pre></details></li></ul><ul id="e65d896d-0b70-4b2f-bcb6-946a18391b6a" class="toggle"><li><details open=""><summary>destructing props</summary><p id="615e94e0-c823-4eb6-abe5-64706b5cc6b7" class="">should do it like this so you don&#x27;t need to keep referencing this.props</p><pre id="2fa02fee-b230-4aea-ad7f-2f9724c4f442" class="code"><code>	render() {
+    const {
+      model,
+      title
+    } = this.props
+    return ( 
+      &lt;ExpandableForm 
+        onSubmit={this.handleSubmit} 
+        expanded={this.state.expanded} 
+        onExpand={this.handleExpand}&gt;
+        &lt;div&gt;
+          &lt;h1&gt;{title}&lt;/h1&gt;
+          &lt;input
+            type=&quot;text&quot;
+            value={model.name} <mark class="highlight-yellow">// notice the use of newline here</mark>
+            onChange={this.handleNameChange}
+            placeholder=&quot;Your Name&quot;/&gt;
+        &lt;/div&gt;
+      &lt;/ExpandableForm&gt;
+    )
+  }</code></pre></details></li></ul></details></li></ul><h3 id="89a5f21e-bb21-431f-8da4-39a90026836d" class="">Refactoring</h3><ul id="6bcf01ad-67bd-4b25-898e-5ba741cc500b" class="block-color-blue toggle"><li><details open=""><summary>link</summary><figure id="1949bf91-c322-4231-a4bb-aedc53b20976"><a href="https://levelup.gitconnected.com/refactoring-a-complex-react-component-5-best-practices-to-write-efficient-and-readable-components-b0d06f4f22b4" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Refactoring a Complex React Component - 5 Best Practices to Write Efficient and Readable Components</div><div class="bookmark-description">React.js has become the most popular view library for web components, evolving across multiple features that today make it a complete tool to create amazing web applications. The community has grown exponentially, especially in the past 2-3 years, populating the web with thousands of tutorials regarding this technology.</div></div><div class="bookmark-href"><img src="https://miro.medium.com/fit/c/256/256/1*MMpkJtmeCME-6BmGNH5l8A.png" class="icon bookmark-icon"/>https://levelup.gitconnected.com/refactoring-a-complex-react-component-5-best-practices-to-write-efficient-and-readable-components-b0d06f4f22b4</div></div><img src="https://miro.medium.com/max/3288/1*yMx7iU9sxrxnUOVZSs_rCg.png" class="bookmark-image"/></a></figure></details></li></ul><blockquote id="de7c246a-af56-4679-ad52-9fd4172b5d85" class="">We have not learned Hooks however this article covers reminders of what we want our code to look like -- we want it to be readable, as short as possible, but still work appropriately. We will learn hooks later…</blockquote><ul id="ffc1963b-6113-4635-9c2a-52ca71d9278c" class="toggle"><li><details open=""><summary>Refactoring</summary><p id="e99bec3a-af7b-4f52-ad0c-7b7e59353bd5" class="">the key is when you have something that&#x27;s repeated, make it a thing (component)</p><ul id="eb89ea8b-c717-43fc-8f2a-f330ff85d178" class="toggle"><li><details open=""><summary>propTypes</summary><p id="b4aa2b30-14f7-4e2e-93d1-229109e6fd32" class="">let&#x27;s you ensure the type of an object from props</p><pre id="9a7296d4-391e-433c-87d2-8f681d1ffa12" class="code"><code>ListItem.propTypes = {
+	action: PropTypes.func,
+	setClicked: PropTypes.func,
+	title: Proptypes.string
+};</code></pre></details></li></ul></details></li></ul><h3 id="b23d834d-b813-4511-b320-bbda3d141429" class="">How to write Great React</h3><ul id="378f983c-8622-4d75-bb68-8d5df3c85d20" class="block-color-blue toggle"><li><details open=""><summary>link</summary><figure id="65acde7b-0015-4af7-84e7-acb0dc5845ce"><a href="https://medium.com/swlh/how-to-write-great-react-c4f23f2f3f4f" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to write great React</div><div class="bookmark-description">Our goal is to write React applications that are easy to read, easy to maintain, and easy to extend. There are a lot of factors that go into this: architecture, state management, file structure, code formatting, etc etc. But the bulk of our application-the bulk of the code our team will be working with- will be components.</div></div><div class="bookmark-href"><img src="https://cdn-static-1.medium.com/_/fp/icons/favicon-rebrand-medium.3Y6xpZ-0FSdWDnPM3hSBIA.ico" class="icon bookmark-icon"/>https://medium.com/swlh/how-to-write-great-react-c4f23f2f3f4f</div></div><img src="https://miro.medium.com/max/1200/1*FdaoqUQX-KZqVtgyupgHxA.png" class="bookmark-image"/></a></figure></details></li></ul><ul id="3a330732-e2ee-40d7-bdea-589a061de0a3" class="toggle"><li><details open=""><summary>summary</summary><blockquote id="39f32e0d-5b66-495e-9546-7f36728ac804" class="">A component is just a function. We like it when functions are few lines and handle a minimal amount of responsibilities. If one function gets very long and confusing, break it up into multiple functions.
+Once upon a time, engineers had to keep variable and function names are short as possible because of memory constraints. Now, we are able to make the names as long and as descriptive as we desire. Still aim to keep the name short but highly specific / descriptive. Do not put the type of the information stored in the variable in the name. Do not include the bolded words in the following example variable names:
+userPreferencesObject
+userNameString
+moviesWatchedList</blockquote></details></li></ul><blockquote id="b273bb19-ead6-4592-9a4a-6beaf7ef8e96" class="block-color-orange">If I could five a new developer one piece of advice to hekp them write great React, what would it be?</blockquote><ul id="60fe3106-ffc1-4703-87d1-8ada55c306c7" class="toggle"><li><details open=""><summary>Great React</summary><ul id="afdeba66-c4bb-4705-9383-48f70851199e" class="toggle"><li><details open=""><summary>goal:</summary><p id="b67fd20b-d442-4f7a-86d3-344be08387c3" class="">easy to read</p><p id="9e143e13-545e-4f80-942d-c207c6375bbd" class="">easy to maintain</p><p id="76a4942d-9a23-4c0a-92be-8db696e9b0be" class="">easy to extend</p></details></li></ul><ul id="d4f980c6-eeed-4741-acc2-f6b7b2a8d9f6" class="toggle"><li><details open=""><summary>bulk of code is</summary><p id="bd87cbe5-5203-4a6d-bd1d-5447c01b5d46" class="">components</p></details></li></ul><ul id="1955be93-6fc9-44af-82e4-7aa05a4a7b19" class="toggle"><li><details open=""><summary>treat components as</summary><p id="0762aff9-fc9d-43a9-8cd9-884a12b42375" class="">functions.</p></details></li></ul><ul id="659a79a9-d3ea-45af-80c5-23f4ec30e262" class="toggle"><li><details open=""><summary>writing great functions:</summary><p id="fb163dfe-69e7-4899-9ea0-d01f39b416c5" class="">they are:</p><ol id="9408c234-90a4-4504-96e8-0d80fd59559c" class="numbered-list" start="1"><li>small<p id="71a6d5e0-d0e2-441c-8d2c-f0ae9ad12a52" class="">&quot;should rarely be more than 20 lines&quot;</p><p id="0377b211-00a9-4427-83e6-90af9c07c3ee" class="">50 lines a good rule of thumb for react (render method)</p></li></ol><ol id="fe83f2f8-7da0-4603-8820-1d410ece6854" class="numbered-list" start="2"><li>do one thing<p id="905ddf61-e7f9-41d3-b60b-c8bc215d21c9" class="">split your UI into small parts that do one thing</p></li></ol><ol id="015decc0-8234-41d8-964e-7f4050ab90cf" class="numbered-list" start="3"><li>have one level of abstraction<p id="ef7e5bb1-3c6a-4f0b-a992-5a48c33ee364" class="">not very many props</p><p id="494500f2-c9ca-4e4b-b6b3-114fd4ae6bdc" class="">3 is fine, 5 is too much, more than 7 is a crisis</p><p id="2c39fbbd-05cb-4d98-bfa7-a5e15ef341a3" class="">try to handle events at a lower level</p></li></ol><ol id="483c5582-f4ba-4e7d-a54d-eecdcb712ea4" class="numbered-list" start="4"><li>less than 3 arguments</li></ol><ol id="90be5bf7-6ba1-4a13-b14a-eada81b42456" class="numbered-list" start="5"><li>descriptive name</li></ol></details></li></ul></details></li></ul><p id="57fb886f-290c-4b5d-ae15-3b36f3736898" class="">
+</p><h3 id="7ea82bf2-ca43-41ac-9398-6a19b04f8744" class="">Summary</h3><ul id="d54c1281-0aa4-4042-8482-b33fdfa935b1" class="bulleted-list"><li>Agile development saves money and time and makes those working on the products more involved and feel more valued. It does this by stressing value and not just amount of output. Everything is tied to a real outcome and is trackable: the backlog of feature requests are reasonable and specific and are taken by individuals in the team and all amount to a product that is stable and released incrementally. </li></ul><ul id="40dab0eb-fec0-4f79-91e8-fe66c13163ae" class="bulleted-list"><li>Dependency imports and local imports should be separated by a newline. setState is asynchronous so you should use prevState to rely on the previous state not the current state. props should be destructured like this so you don&#x27;t need to keep referencing this.props</li></ul><pre id="978fb391-7e10-4eeb-8941-be5582beffd1" class="code"><code>const {
+	model,
+  title
+} = this.props</code></pre><ul id="83030f6f-b116-4836-b5a3-7bc69163f5cf" class="bulleted-list"><li>You can use propTypes to ensure the type of the props passes in (see code below). When writing React components, treat them like functions. Reading code shouldn&#x27;t look like a foreign language, it should logically make sense and be able to follow. </li></ul><pre id="90adad50-c422-47a4-a703-5f5a387302aa" class="code"><code>ListItem.propTypes = {
+	action: PropTypes.func,
+	setClicked: PropTypes.func,
+	title: Proptypes.string
+};</code></pre><p id="5cffe015-1374-4498-90ea-6e389b4f0d62" class="">
+</p></div></article></body></html>

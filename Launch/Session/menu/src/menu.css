@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+
+body {
+    padding: 20px 80px;
+    background: #eee
+    url(https://subtlepatterns.com/patterns/extra_clean_paper.png);
+}
+
+.menuHeader {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 120px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1;
+    text-shadow: #EDEDED 3px 2px 0;
+    position: relative;
+}
+
+.menuHeader:after{
+    content:"website";
+    position: absolute;
+    left: 8px;
+    top: 32px;
+}
+
+.menuHeader:after {
+    background-image: -webkit-linear-gradient(left top, transparent 0%
+    , transparent 25%, #555 25%, #555 50%,
+    transparent 50%, transparent 75%, #555 75%);
+    background-size: 4px 4px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -5;
+  display: block;
+  text-shadow: none;
+}
+
+.menuHeader li:before {
+    left: 0;
+    bottom: -4px;
+        background-image: -webkit-linear-gradient(right, 
+        transparent 0%, rgba(0,0,0,.4) 100%)
+}
+
+/* .form {
+	--x: 50%;
+	--y: 50%;
+	
+	position: relative;
+	appearance: none;
+	padding: 1em 2em;
+	color: white;
+	cursor: pointer;
+	outline: none;
+    border-radius: 100px;
+    
+    text-align: center;
+    
+    margin-top: 40px;
+
+	 The magic
+	border: 2px solid transparent;
+	background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+} */
+
+.menuItem {
+    font-family: 'Open Sans', sans-serif;
+    margin: 30px 30px 0 30px;
+    /*equivalent:
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-bottom: 0;
+    margin-left: 30px;
+    */
+
+
+}
+
+/* HTML recognizes items without class name */
+h2 {
+    margin: 0;
+    font-size: 40px;
+    color: #555;
+}
+
+h6 {
+    margin: 0;
+    font-size: 10px;
+    display: inline;
+}
+
+.menuButton {
+    margin-top: 10px;
+    border-color: #323636;
+    font-weight: bolder;
+    font-size: 10px;
+    border-style: double;
+    background: White;
+    padding: 6px
+}
+
+
+/*
+Diff between padding and margin:
+
+*/
+
+
+/* use dancing script, if not found, use cursive */
+    /* font-family: "Dancing Script", "cursive"; 
+    font-size: 40px;
+    text-align: center; */
+    /* Hex values of colors? */
+    /* background-image: linear-gradient(#c7eae5, #09b2a4);
+    color: White; */
+    /* margin-bottom: 50px; */
+
+    /* area below */
+    /* padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 0 0 85% 85% / 60%; */
+
+    /* margin-top: 20px;
+    margin-right: 20px; - space around element*/

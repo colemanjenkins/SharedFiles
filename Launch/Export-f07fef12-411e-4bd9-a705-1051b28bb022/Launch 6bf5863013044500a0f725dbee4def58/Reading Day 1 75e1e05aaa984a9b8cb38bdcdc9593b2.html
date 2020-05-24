@@ -1,0 +1,652 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Reading Day 1</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="75e1e05a-aa98-4a9b-8cb3-8bdcdc9593b2" class="page sans"><header><h1 class="page-title">Reading Day 1</h1></header><div class="page-body"><h3 id="f66a2fc6-f366-499e-b63d-94c0b7b0621d" class="">Virtual DOM</h3><ul id="d8528207-b3ec-4b07-8063-59eca4412fcc" class="block-color-blue toggle"><li><details open=""><summary>link </summary><figure id="b88e7121-c7ee-43cc-be30-b19ecd0c1f6b"><a href="https://medium.com/coffee-and-codes/hey-react-what-is-the-virtual-dom-466ec333bf9a" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Hey React, What is the Virtual DOM?</div><div class="bookmark-description">When you start learning React, the first concept to understand is Virtual DOM. But before we jump into Virtual DOM, let&#x27;s see what is DOM itself. &quot;The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content.</div></div><div class="bookmark-href"><img src="https://cdn-static-1.medium.com/_/fp/icons/favicon-rebrand-medium.3Y6xpZ-0FSdWDnPM3hSBIA.ico" class="icon bookmark-icon"/>https://medium.com/coffee-and-codes/hey-react-what-is-the-virtual-dom-466ec333bf9a</div></div><img src="https://miro.medium.com/max/474/1*2ogAfZgIg9vQA3BKIoLmxg.jpeg" class="bookmark-image"/></a></figure></details></li></ul><ul id="c4f6972f-b3db-49a5-9f23-e7c429677c52" class="toggle"><li><details open=""><summary>XML vs HTML</summary></details></li></ul><ul id="b65897d3-6ab4-4f8e-906a-d99b9c36cb60" class="toggle"><li><details open=""><summary>DOM</summary><ul id="5fc43906-12e5-4af7-9fa1-a3e02c3f5cda" class="toggle"><li><details open=""><summary>Stands for</summary><p id="09dcac2c-e6fe-452b-8f39-52f9824f2581" class="">Document Object Model</p></details></li></ul><ul id="403449e8-ab69-45fb-9e2b-d423278c029a" class="toggle"><li><details open=""><summary>represents document as (2 things)</summary><p id="ae124580-3cdb-4111-acd5-208562d02fe9" class="">nodes and objects</p><p id="5ccbb7d9-c3e3-485c-82a5-72bb627c6294" class="">allows programming languages to connect to a page</p></details></li></ul><ul id="95486fb2-fadd-4e43-acd4-e433b6902db3" class="toggle"><li><details open=""><summary>a web page is a </summary><p id="42012df4-4cf3-48e2-8f9a-a6bf1edac22e" class="">document</p><p id="f228f23b-af2a-41a8-b8af-93d4e5347b15" class="">the DOM represents the document so it can be manipulated</p></details></li></ul><p id="c4f3edd7-90b0-4b52-8be3-a0c9a774ae7e" class="">
+</p></details></li></ul><ul id="6674a325-8a02-4779-9d84-3eeafc24e735" class="toggle"><li><details open=""><summary>Virtual DOM</summary><ul id="7bcbe8f7-41f7-4652-914b-df2cf15e53e3" class="toggle"><li><details open=""><summary>Abstraction of</summary><p id="a7585f32-b6ec-4105-adf2-45f6a1c81305" class="">HTML DOM</p><p id="53161d7a-3532-4738-91bd-162c4da47943" class="">lightweight and detached from browswer-specific implementation details</p></details></li></ul><ul id="b79c412c-ff98-44dd-b868-df1f84014732" class="toggle"><li><details open=""><summary>what method from react creates a node tree 🌲 </summary><p id="f20a635d-1777-48b1-bab5-aae89b7da3ea" class="">render()</p></details></li></ul><ul id="b290b2f3-f7c3-489f-a820-a775395c0b61" class="toggle"><li><details open=""><summary>is what for react</summary><p id="4b996517-a94c-4bfe-9fcb-16ceba3d7abd" class="">react&#x27;s local copy of the HTML DOM</p><p id="d91fc887-988c-4b49-86a4-9fd643bfa8b7" class="">allows react to do computations and skip reall DOM operations</p><p id="66b457fb-0034-4ae0-aad7-49b3d0a04946" class="">
+</p></details></li></ul><ul id="80593e1e-c022-428b-9244-724e24395cbe" class="toggle"><li><details open=""><summary>React Component gets converted to the react Element version</summary></details></li></ul><ul id="54a3ab55-5d2d-464e-bd82-b521597b51f8" class="toggle"><li><details open=""><summary>algorithm to make this efficient</summary><ul id="67612780-639e-4863-a1d9-cead14f0dfb2" class="toggle"><li><details open=""><summary>diffing</summary><p id="f73ca2d4-4f04-4591-9a53-4ea9fe2dcb00" class="">compares the previous snapshot of the virtual DOM to the new virtual DOM and only changes the updated DOM objects</p><p id="8756d4fc-b49a-4748-8d4d-f6ca7d4833da" class="">see reconciliation</p></details></li></ul></details></li></ul></details></li></ul><h3 id="0525a7b4-d6f3-42e8-97b3-b9b43653173b" class="">Reconciliation</h3><ul id="47472991-7875-422b-85f0-50c7b6a35302" class="block-color-blue toggle"><li><details open=""><summary>link</summary><figure id="2b39c167-8ebf-4284-aeea-f4e97399671a"><a href="https://reactjs.org/docs/reconciliation.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Reconciliation - React</div><div class="bookmark-description">React provides a declarative API so that you don&#x27;t have to worry about exactly what changes on every update. This makes writing applications a lot easier, but it might not be obvious how this is implemented within React. This article explains the choices we made in React&#x27;s &quot;diffing&quot; algorithm so that component updates are predictable while being fast enough for high-performance apps.</div></div><div class="bookmark-href"><img src="https://reactjs.org/icons/icon-48x48.png?v=a95b1cba85b449d3cf230505f32a3d42" class="icon bookmark-icon"/>https://reactjs.org/docs/reconciliation.html</div></div><img src="https://reactjs.org/logo-og.png" class="bookmark-image"/></a></figure></details></li></ul><ul id="403d2d97-5527-4862-8e49-fb9416c67076" class="toggle"><li><details open=""><summary>Diffing Algorithm</summary></details></li></ul><ul id="c8c3c315-5c1b-4c8a-8d58-57586c26aa3e" class="toggle"><li><details open=""><summary>Recursing on Children</summary><ul id="cff03164-555b-4f8a-969c-5a6d67d3fd69" class="toggle"><li><details open=""><summary>Inserting an element</summary><p id="3a36b94f-7e7e-4554-b036-e020a0eb0187" class="">can be poor if inserted at beginning: will be O(n) I think</p><pre id="cb2dc938-293c-4c39-97fe-56d08c70960c" class="code"><code>&lt;ul&gt;
+  &lt;li&gt;Duke&lt;/li&gt;
+  &lt;li&gt;Villanova&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Connecticut&lt;/li&gt;
+  &lt;li&gt;Duke&lt;/li&gt;
+  &lt;li&gt;Villanova&lt;/li&gt;
+&lt;/ul&gt;</code></pre><p id="f29b685c-4f7d-43b6-b41d-2c90ecc48827" class="">this will update all of them</p></details></li></ul><ul id="c271f6d9-3e76-42ad-85f1-28d9267e8856" class="toggle"><li><details open=""><summary>How to solve the inserting issue</summary><p id="8817e044-2ea5-4f78-8a76-4bc0b8920d0d" class="">Keys</p><ul id="0148ccd0-8359-4841-bc1e-1f57f7fb0f9b" class="toggle"><li><details open=""><summary>key element</summary><pre id="38b53820-7f2a-4584-8580-e9eac0de06ee" class="code"><code>&lt;ul&gt;
+  &lt;li key=&quot;2015&quot;&gt;Duke&lt;/li&gt;
+  &lt;li key=&quot;2016&quot;&gt;Villanova&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li key=&quot;2014&quot;&gt;Connecticut&lt;/li&gt;
+  &lt;li key=&quot;2015&quot;&gt;Duke&lt;/li&gt;
+  &lt;li key=&quot;2016&quot;&gt;Villanova&lt;/li&gt;
+&lt;/ul&gt;</code></pre><p id="e2d55bf3-ec7b-4120-8fb1-626e05870a4a" class="">this shows react that the second two elements stay the same, they have just changed position</p><p id="8ba9bcc7-2f79-43ec-8905-1c2d92f37791" class="">
+</p><p id="88c5e817-254b-4b06-99db-c816e345530a" class="">
+</p></details></li></ul><ul id="f8bf00a0-f572-408a-a42d-87bd256695a3" class="toggle"><li><details open=""><summary>can just come from your</summary><p id="7e4d91ff-19f7-4f4b-8599-c2291b3ad108" class="">data, that&#x27;s probably unique in some way</p><p id="3bb93ece-4ec8-4171-a630-940b4e04189a" class="">
+</p></details></li></ul><ul id="2c62a448-c2c4-4c93-b565-0ea86ffa3844" class="toggle"><li><details open=""><summary>key needs to be</summary><p id="6b0ee2dc-e305-4645-9669-4d99dbac5e82" class="">unique among sublings, but not globally unique</p><p id="4c772e93-3c71-4f87-8ac5-9052e1c698c7" class="">stable, predictable, and unique</p></details></li></ul></details></li></ul></details></li></ul><h3 id="013d6f61-289c-4e3e-abc9-40e8b8bbd95a" class="">React Demystified</h3><ul id="9086b1ca-2321-49c7-97e5-ff49f619b764" class="block-color-blue toggle"><li><details open=""><summary>link</summary><figure id="fa4e03c0-d4b2-43e8-9e46-0ca3f2732ac8"><a href="https://blog.reverberate.org/2014/02/react-demystified.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">React Demystified</div><div class="bookmark-description">This entry will be a bit of a departure from the usual content of this blog, which is mostly about parsing and low-level programming. Lately I&#x27;ve had some interest in JavaScript frameworks, including Facebook&#x27;s React.</div></div><div class="bookmark-href">https://blog.reverberate.org/2014/02/react-demystified.html</div></div><img src="https://docs.google.com/drawings/d/1AexTHVNPYIn5jZ_ysIDnmLWM8HcLdFvioe2RYzjl2H4/pub?w=595&amp;h=344" class="bookmark-image"/></a></figure></details></li></ul><ul id="d9f8902a-8bee-4188-832e-275711a23141" class="toggle"><li><details open=""><summary>Components</summary><ul id="abaf6493-27f2-4fcb-8f33-9f2e65924c0b" class="toggle"><li><details open=""><summary>The real DOM is made up of</summary><p id="ff75e3ce-d114-4baf-9330-af9c99e40538" class="">elements</p></details></li></ul><ul id="17e566e9-adec-403d-8e4a-c8be7b7d3ed3" class="toggle"><li><details open=""><summary>the virtual DOM is made up of </summary><p id="c5760456-68fa-48a5-a54c-4de0e681e676" class="">components</p></details></li></ul><pre id="f6b3b128-9d78-4ca2-9ae3-506d0ebef9de" class="code"><code>/** @jsx React.DOM */
+var HelloMessage = React.createClass({
+  render: function() {
+    return &lt;div&gt;Hello {this.props.name}&lt;/div&gt;;
+  }
+});
+
+React.renderComponent(&lt;HelloMessage name=&quot;John&quot; /&gt;, mountNode);</code></pre><ul id="268603d1-8455-41b0-b5ac-9799a3a08b87" class="toggle"><li><details open=""><summary>code explanation</summary><ul id="af1e15d9-f6e9-4f1c-8057-8a12ba609783" class="toggle"><li><details open=""><summary>HelloMessage</summary><p id="0f525c4f-415e-4c7f-92cf-03289bd0f507" class="">component class</p></details></li></ul></details></li></ul></details></li></ul><ul id="b3479240-1344-4454-b3e5-de2030c83f95" class="toggle"><li><details open=""><summary>Representing State and Changes</summary><ul id="6147d525-d4ab-4791-bd03-88a3aa1add83" class="toggle"><li><details open=""><summary>render is a function of</summary><p id="9b435672-bea4-48af-bec3-dc8c84936549" class="">state and props</p></details></li></ul><ul id="cb5917e8-3a3f-46f1-9104-b5a4d4896464" class="toggle"><li><details open=""><summary>state doesn&#x27;t change except when</summary><p id="aeab13f3-0404-4aaa-a82e-0b1ffe531842" class="">setState() is called</p></details></li></ul><ul id="086e9ef0-ca11-4d2a-8ee2-7fa9be8b0ab6" class="toggle"><li><details open=""><summary>props don&#x27;t change except when</summary><p id="2330fd47-d3f2-4884-bbb0-12971268e2ab" class="">parent re-renders us with different props</p></details></li></ul></details></li></ul><figure class="block-color-yellow callout" style="white-space:pre-wrap;display:flex" id="85555e50-8b99-41d7-82b7-c594c9751655"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">mountNode?</div></figure><figure class="block-color-yellow callout" style="white-space:pre-wrap;display:flex" id="98152804-ef46-4cbc-b079-87b1b09b1e24"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">componentDidMount() componentwillUnmount() ?</div></figure></div></article></body></html>

@@ -1,0 +1,38 @@
+.formTitle {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+body:after {
+    color: white;
+}
+
+.formBody {
+    background-color: white;
+
+}
+
+.total {
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    text-align: bottom;
+}
+
+.orderElementsTitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    display: inline;
+    text-align: center
+}
+
+.orderElementsPrice {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    display: inline;
+    text-align: right
+}
+
+h2 {
+    display: inline
+}
