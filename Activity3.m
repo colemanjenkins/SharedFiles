@@ -12,9 +12,12 @@ R = @(Q) (1/Q)*sqrt(L/C);
 
 QList = [((1/68)*sqrt(L/C)), 1.625, .707, .5315, .500001, .25];
 
+tdelta = 1e-6;
+PulseAmplitude = 1/tdelta; % x(t) = impulse function, ideally, Area = 1
+StepAmplitude = 10; % x(t) = step function, units = cm
+
 tbegin = 0;
 tend = 1e-3;
-tdelta = 1e-6;
 t = 0:1e-6:.01; % only for the first one
 
 for Q = QList
@@ -30,4 +33,3 @@ for Q = QList
     figure_num = figure_num + 1;
     t = tbegin:tdelta:tend;
 end
-
